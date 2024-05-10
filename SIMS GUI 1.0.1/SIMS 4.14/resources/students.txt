@@ -1,0 +1,10 @@
+Student ID|Surname|First name|Date (DD/MM/YYYY)|
+69765575|Banks|Robbin|9/4/2001|
+53292981|Gus|Amon|27/3/2006|
+79089561|Maximus|Naughtius|20/6/1993|
+97293231|Huginkiss|Amanda|24/10/1996|
+23099617|Allen|Paul|11/2/1990|
+47460655|Baka|Sussy|20/12/2003|
+13977953|Soddus|Silius|2/7/2002|
+13514087|Schmungus|Schnoobis|21/11/2002|
+40876934|Ligma|Rahul|28/10/1996|
