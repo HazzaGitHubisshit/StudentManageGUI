@@ -32,43 +32,72 @@ public class Update extends JPanel  {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        AddStudButt = new javax.swing.JButton();
+        AddPapeButt = new javax.swing.JButton();
+        AssignButt = new javax.swing.JButton();
+        DisassignButt = new javax.swing.JButton();
+        DelStudButt = new javax.swing.JButton();
+        DelPapeButt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        homebutt = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        panel = new infosys.NewJpanel();
+        AddPape = new infosys.AddPaper();
+        AddStud = new infosys.AddStudent();
+        AssPape = new infosys.AssignPaper();
+        DelPape = new infosys.DeletePaper();
+        DelStud = new infosys.DeleteStudent();
+        DisPape = new infosys.DisassignPaper();
+
+        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel2.setText("What would you like to update");
 
-        jButton5.setText("Add Student to database");
+        AddStudButt.setText("Add Student to database");
+        AddStudButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddStudButtActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Add Paper to database");
+        AddPapeButt.setText("Add Paper to database");
+        AddPapeButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddPapeButtActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("Assign a paper to a student:");
+        AssignButt.setText("Assign a paper to a student:");
+        AssignButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssignButtActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("Disassign a paper from a student:");
+        DisassignButt.setText("Disassign a paper from a student:");
+        DisassignButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisassignButtActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Delete Student");
+        DelStudButt.setText("Delete Student");
+        DelStudButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DelStudButtActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Delete Paper");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
-        );
+        DelPapeButt.setText("Delete Paper");
+        DelPapeButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DelPapeButtActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Update Students:");
@@ -82,71 +111,111 @@ public class Update extends JPanel  {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Disassignment:");
 
+        homebutt.setText("(Reset)");
+        homebutt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homebuttActionPerformed(evt);
+            }
+        });
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 322));
+        jPanel2.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 322, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(panel, "card2");
+        jPanel2.add(AddPape, "card3");
+        jPanel2.add(AddStud, "card4");
+        jPanel2.add(AssPape, "card5");
+        jPanel2.add(DelPape, "card6");
+        jPanel2.add(DelStud, "card7");
+        jPanel2.add(DisPape, "card8");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homebutt)
+                .addGap(284, 284, 284))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(147, 147, 147)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(AddStudButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(AddPapeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(DelStudButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(DelPapeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(DisassignButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(AssignButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(196, 196, 196)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(127, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2)
+                .addGap(148, 148, 148)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AddStudButt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DelStudButt)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel2)
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
                         .addGap(44, 44, 44)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
+                        .addComponent(AddPapeButt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(DelPapeButt)
                         .addGap(60, 60, 60)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
+                        .addComponent(AssignButt)
                         .addGap(46, 46, 46)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8))
+                        .addComponent(DisassignButt))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
+                        .addGap(4, 4, 4)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addComponent(homebutt)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,14 +223,77 @@ public class Update extends JPanel  {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void AddStudButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStudButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(AddStud);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_AddStudButtActionPerformed
+
+    private void DelStudButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelStudButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(DelStud);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_DelStudButtActionPerformed
+
+    private void AddPapeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPapeButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(AddPape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_AddPapeButtActionPerformed
+
+    private void DelPapeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelPapeButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(DelPape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_DelPapeButtActionPerformed
+
+    private void AssignButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(AssPape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_AssignButtActionPerformed
+
+    private void DisassignButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisassignButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(DisPape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_DisassignButtActionPerformed
+
+    private void homebuttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebuttActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(panel);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_homebuttActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private infosys.AddPaper AddPape;
+    private javax.swing.JButton AddPapeButt;
+    private infosys.AddStudent AddStud;
+    private javax.swing.JButton AddStudButt;
+    private infosys.AssignPaper AssPape;
+    private javax.swing.JButton AssignButt;
+    private infosys.DeletePaper DelPape;
+    private javax.swing.JButton DelPapeButt;
+    private infosys.DeleteStudent DelStud;
+    private javax.swing.JButton DelStudButt;
+    private infosys.DisassignPaper DisPape;
+    private javax.swing.JButton DisassignButt;
+    private javax.swing.JButton homebutt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -169,6 +301,7 @@ public class Update extends JPanel  {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private infosys.NewJpanel panel;
     // End of variables declaration//GEN-END:variables
 
     

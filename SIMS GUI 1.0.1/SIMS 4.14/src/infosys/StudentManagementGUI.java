@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import Model.*;
 
 /**
  *
@@ -92,7 +93,6 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         jLabel2.setLabelFor(Accessbuttom);
         jLabel2.setText("Main Menu =>");
         jLabel2.setToolTipText("");
-        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
 
         jButton1.setText("Go To HomeScreen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,9 +120,8 @@ public class StudentManagementGUI extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
 
@@ -169,7 +168,7 @@ public class StudentManagementGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Accessbuttom, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Updatebut, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         jPanel6.add(jPanel2, "card4");
@@ -186,7 +185,7 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -229,9 +228,11 @@ public class StudentManagementGUI extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         int option = JOptionPane.showConfirmDialog(StudentManagementGUI.this,
-            "Are you sure you want to exit the program?", "Exit Confirmation", JOptionPane.YES_NO_OPTION);
+                "Are you sure you want to exit the program?", "Exit Confirmation", JOptionPane.YES_NO_OPTION);
         if (option == JOptionPane.YES_OPTION) {
-            dispose();
+            JDBCSetup JBDCSetup = new JDBCSetup();
+            JBDCSetup.closeConnections();
+            dispose();           
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -241,14 +242,14 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         jPanel6.add(jPanel2);
         jPanel6.repaint();
         jPanel6.revalidate();
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
 //        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -276,7 +277,7 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                
+
                 new StudentManagementGUI().setVisible(true);
             }
         });
@@ -298,7 +299,4 @@ public class StudentManagementGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 
-    
-
-    
 }

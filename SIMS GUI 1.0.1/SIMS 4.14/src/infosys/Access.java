@@ -33,32 +33,88 @@ public class Access extends JPanel  {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        LStudButt = new javax.swing.JButton();
+        LPapeButt = new javax.swing.JButton();
+        StudButt = new javax.swing.JButton();
+        PapeButt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        panel = new infosys.NewJpanel();
+        Lpape = new infosys.ListPapers();
+        Stud = new infosys.SearchStudent();
+        Pape = new infosys.SearchPaper();
+        Lstud = new infosys.ListStudents();
+        homebutt = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
+
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel2.setText("What would you to access");
 
-        jButton5.setText("List Students:");
+        LStudButt.setText("List Students:");
+        LStudButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LStudButtActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("List Papers:");
+        LPapeButt.setText("List Papers:");
+        LPapeButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LPapeButtActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("Search Students:");
+        StudButt.setText("Search Students:");
+        StudButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StudButtActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("Search Students:");
+        PapeButt.setText("Search Papers:");
+        PapeButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PapeButtActionPerformed(evt);
+            }
+        });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 153));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Access Student(s) Information:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Access Paper(s) Information:");
+
+        jPanel2.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 382, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 607, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(panel, "card6");
+        jPanel2.add(Lpape, "card5");
+        jPanel2.add(Stud, "card2");
+        jPanel2.add(Pape, "card3");
+        jPanel2.add(Lstud, "card4");
+
+        homebutt.setText("(Reset)");
+        homebutt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homebuttActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,37 +123,52 @@ public class Access extends JPanel  {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addContainerGap(560, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel3))
-                        .addGap(294, 294, 294)))
-                .addContainerGap(387, Short.MAX_VALUE))
+                                .addComponent(LStudButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(StudButt, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addComponent(PapeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LPapeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homebutt)
+                .addGap(279, 279, 279))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel2)
-                .addGap(149, 149, 149)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
-                .addGap(115, 115, 115)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton8)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LStudButt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(StudButt)
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LPapeButt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PapeButt)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(homebutt)
+                        .addGap(51, 51, 51))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -111,20 +182,66 @@ public class Access extends JPanel  {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LStudButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LStudButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(Lstud);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_LStudButtActionPerformed
+
+    private void StudButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(Stud);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_StudButtActionPerformed
+
+    private void LPapeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LPapeButtActionPerformed
+        jPanel2.removeAll();
+        jPanel2.add(Lpape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_LPapeButtActionPerformed
+
+    private void PapeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PapeButtActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(Pape);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_PapeButtActionPerformed
+
+    private void homebuttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebuttActionPerformed
+        // TODO add your handling code here:
+        jPanel2.removeAll();
+        jPanel2.add(panel);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+    }//GEN-LAST:event_homebuttActionPerformed
     
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton LPapeButt;
+    private javax.swing.JButton LStudButt;
+    private infosys.ListPapers Lpape;
+    private infosys.ListStudents Lstud;
+    private infosys.SearchPaper Pape;
+    private javax.swing.JButton PapeButt;
+    private infosys.SearchStudent Stud;
+    private javax.swing.JButton StudButt;
+    private javax.swing.JButton homebutt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private infosys.NewJpanel panel;
     // End of variables declaration//GEN-END:variables
 
     

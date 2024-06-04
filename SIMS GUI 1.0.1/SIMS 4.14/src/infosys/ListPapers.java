@@ -8,6 +8,7 @@ package infosys;
  *
  * @author user
  */
+import Model.*;
 public class ListPapers extends javax.swing.JPanel {
 
     /**

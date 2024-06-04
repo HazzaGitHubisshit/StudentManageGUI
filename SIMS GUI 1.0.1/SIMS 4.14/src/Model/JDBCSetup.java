@@ -15,9 +15,9 @@ public final class JDBCSetup {
 
     private static final String USER_NAME = "sims"; //your DB username
     private static final String PASSWORD = "sims"; //your DB password
-    private static final String URL = "jdbc:derby://localhost:1527/sims";  //url of the DB host
+    private static final String URL = "jdbc:derby:simsEbd;create=true";  //url of the DB host
 
-    Connection conn;
+    Connection conn;                                                                                                                                                                
 
     public JDBCSetup() {
         establishConnection();

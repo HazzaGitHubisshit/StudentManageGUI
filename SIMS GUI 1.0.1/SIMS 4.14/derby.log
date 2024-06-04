@@ -1,20 +1,13 @@
-Fri May 10 23:50:32 NZST 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Fri May 10 23:50:32 NZST 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-6257-3055-000068b618e8 
-on database directory C:\Users\user\OneDrive\Desktop\netbeans\SIMS GUI 1.0.1\SIMS 4.14\SIMS with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
-Loaded from file:/C:/Users/user/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar
+Tue Jun 04 18:32:09 NZST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-e1f2-af3e-00000f700000 
+on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@18ef96 
+Loaded from file:/C:/Users/user/OneDrive/Documents/GitHub/StudentManageGUI/SIMS%20GUI%201.0.1/SIMS%204.14/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=11.0.21+9-LTS-193
-user.dir=C:\Users\user\Downloads\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+user.dir=C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\user\OneDrive\Desktop\netbeans\SIMS GUI 1.0.1\SIMS 4.14
+derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Fri May 10 23:50:46 NZST 2024: Shutting down Derby engine
-----------------------------------------------------------------
-Fri May 10 23:50:46 NZST 2024:
-Shutting down instance a816c00e-018f-6257-3055-000068b618e8 on database directory C:\Users\user\OneDrive\Desktop\netbeans\SIMS GUI 1.0.1\SIMS 4.14\SIMS with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
-----------------------------------------------------------------
