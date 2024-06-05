@@ -230,8 +230,8 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         int option = JOptionPane.showConfirmDialog(StudentManagementGUI.this,
                 "Are you sure you want to exit the program?", "Exit Confirmation", JOptionPane.YES_NO_OPTION);
         if (option == JOptionPane.YES_OPTION) {
-            JDBCSetup JBDCSetup = new JDBCSetup();
-            JBDCSetup.closeConnections();
+//            JDBCSetup JBDCSetup = new JDBCSetup();
+//            JBDCSetup.closeConnections();
             dispose();           
         }
     }//GEN-LAST:event_jButton3ActionPerformed

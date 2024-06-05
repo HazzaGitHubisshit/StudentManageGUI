@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Tue Jun 04 18:32:09 NZST 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-e1f2-af3e-00000f700000 
+Wed Jun 05 11:59:47 NZST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-e5b1-d2f1-00000f700000 
 on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@18ef96 
 Loaded from file:/C:/Users/user/OneDrive/Documents/GitHub/StudentManageGUI/SIMS%20GUI%201.0.1/SIMS%204.14/lib/derby.jar
 java.vendor=Oracle Corporation

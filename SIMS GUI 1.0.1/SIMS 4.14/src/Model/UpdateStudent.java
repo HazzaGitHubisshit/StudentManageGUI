@@ -8,8 +8,6 @@ package Model;
  *
  * @author user
  */
-public class SQLFoundation {
-    //this will be for tables
-    
-    
+public class UpdateStudent {
+    //add/delete students
 }

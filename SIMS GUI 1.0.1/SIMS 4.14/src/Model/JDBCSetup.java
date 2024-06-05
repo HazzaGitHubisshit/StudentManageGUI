@@ -39,11 +39,8 @@ public final class JDBCSetup {
             try {
                 conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
                 System.out.println(URL + " Get Connected Successfully ....");
-            
-            
-            
-            
-            
+                        
+        
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
             }
