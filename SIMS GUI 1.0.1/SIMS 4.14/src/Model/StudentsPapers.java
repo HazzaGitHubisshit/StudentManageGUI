@@ -12,4 +12,13 @@ public class StudentsPapers {
     
     //Assigning and disassigning
     
+    
+   public void Assigning() {
+       
+   }
+   
+   public void Disassigning() {
+       
+   }
+    
 }

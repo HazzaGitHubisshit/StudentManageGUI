@@ -20,6 +20,7 @@ public class Main {
         
         StudentManagementGUI StudentManagementGUI = new StudentManagementGUI();
         StudentManagementGUI.setVisible(true);
+        JBDCSetup.closeConnections();
     }
     
     

@@ -9,5 +9,6 @@ package Model;
  * @author user
  */
 public class SearchPaper {
-    
+    //SELECT * FROM Customers
+    //WHERE CustomerName LIKE 'a%';
 }
