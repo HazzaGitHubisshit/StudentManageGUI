@@ -11,4 +11,6 @@ package Model;
 public class SearchPaper {
     //SELECT * FROM Customers
     //WHERE CustomerName LIKE 'a%';
+    
+    //or use list classes code to make combo box that you can select a name and it will display the full info
 }

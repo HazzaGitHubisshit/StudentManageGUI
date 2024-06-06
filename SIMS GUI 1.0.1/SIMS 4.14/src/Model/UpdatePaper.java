@@ -15,24 +15,24 @@ import java.util.Date;
 public class UpdatePaper {
     
     //add/delete papers
-    private JDBCSetup setup;
+    private JDBCSetup setup = new JDBCSetup();;
     private Connection conn;
     private Statement statement;
     
     
     public void AddPaper(String Code, String title, int level, int points, String description) {
         
-        
-        setup = new JDBCSetup();
-        
-        String SQLAddToPaperStatement = "INSERT INTO PAPER ("+Code+", "+title+", "+level+", "+points+", "+description+")";
-        
+        String SQLAddToPaperStatement = "INSERT INTO PAPER (PAPERCODE, PAPERTITLE, PAPERLEVEL, PAPERPOINTS, DESCRIPTION) VALUES ('"+Code+"', '"+title+"', "+level+", "+points+", '"+description+"');";
+        //Uses sql statement with JDBCSetup class
         setup.updateDB(SQLAddToPaperStatement);
     }
     
     
     public void DeletePaper(String Code) {
         
+        String sql = "DELETE FROM PAPER WHERE PAPERCODE ='"+Code+"';";
+        setup.updateDB(sql);
+        //Uses sql statement with JDBCSetup class
     }
     
     

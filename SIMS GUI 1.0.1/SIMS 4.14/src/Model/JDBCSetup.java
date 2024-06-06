@@ -16,11 +16,23 @@ public final class JDBCSetup {
     private static final String USER_NAME = "sims"; //your DB username
     private static final String PASSWORD = "sims"; //your DB password
     private static final String URL = "jdbc:derby:simsEbd;create=true";  //url of the DB host
-
+    //class to set up the database
     Connection conn;                                                                                                                                                                
 
     public JDBCSetup() {
-        establishConnection();
+        
+        try {
+            establishConnection();// Initialize database connection
+            conn = DriverManager.getConnection("jdbc:derby:simsEbd;create=true");
+            System.out.println("Get Connected Successfully ....");
+            // Set the schema to APP
+            try (Statement statement = conn.createStatement()) {
+                statement.executeUpdate("SET SCHEMA APP");
+                System.out.println("Schema set to APP.");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     public static void main(String[] args) {

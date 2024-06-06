@@ -15,21 +15,20 @@ import java.util.Date;
 public class UpdateStudent {
     //add/delete students
     
-    private JDBCSetup setup;
+    private JDBCSetup setup = new JDBCSetup();
     private Connection conn;
     private Statement statement;
     
     public void AddStudent(String ID, String FirstName, String LastName, Date DOB) {
         
-        
-        setup = new JDBCSetup();
-        
-        String SQLAddToStudentStatement = "INSERT INTO STUDENT ("+ID+", "+FirstName+", "+LastName+", "+DOB+")";
-        
+        String SQLAddToStudentStatement = "INSERT INTO STUDENT (STUDENTID, FIRSTNAME, LASTNAME, DOB, PAPERCODE) VALUES ('"+ID+"', '"+FirstName+"', '"+LastName+"', '"+DOB+"');";
+        //Uses sql statement with JDBCSetup class
         setup.updateDB(SQLAddToStudentStatement);
     }
     
     public void DeleteStudent(String ID) {
-        
+        String sql = "DELETE FROM STUDENT WHERE STUDENTID ='"+ID+"';";
+        setup.updateDB(sql);
+        //Uses sql statement with JDBCSetup class
     }
 }

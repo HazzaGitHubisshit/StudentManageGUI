@@ -12,10 +12,14 @@ import Model.*;
 import java.util.List;
 import javax.swing.JList;
 public class ListStudents extends javax.swing.JPanel {
-
+    
+    
+        
+        
     /**
      * Creates new form ListStudents
      */
+    
     public ListStudents() {
         initComponents();
     }
@@ -41,7 +45,7 @@ public class ListStudents extends javax.swing.JPanel {
             //    String[] nameArray = names.toArray(new String[0]);
             //
             //    // Create a JList and populate it with the names
-            //    JList<String> nameList = new JList<>(nameArray);
+            //    //        JList<String> nameList = new JList<>(nameArray);
             String[] strings = {"1","2","3","4","5"};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
@@ -84,7 +88,10 @@ public class ListStudents extends javax.swing.JPanel {
             .addContainerGap())
     );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
+    
+    
     private void jList1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jList1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jList1AncestorAdded
@@ -95,8 +102,9 @@ public class ListStudents extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private volatile javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }
