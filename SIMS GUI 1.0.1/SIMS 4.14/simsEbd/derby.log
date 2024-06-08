@@ -1,4 +1,37 @@
-Wed Jun 05 18:29:55 NZST 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Sat Jun 08 00:40:33 NZST 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Wed Jun 05 18:30:01 NZST 2024: Shutting down Derby engine
+Sat Jun 08 00:40:33 NZST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018f-f2b7-0baf-00006ef8e96d 
+on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
+Loaded from file:/C:/Users/user/OneDrive/Documents/GitHub/StudentManageGUI/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.21+9-LTS-193
+user.dir=C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 08 00:40:34 NZST 2024:
+Shutting down instance a816c00e-018f-f2b7-0baf-00006ef8e96d on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
+Sat Jun 08 00:40:34 NZST 2024 Thread[DRDAConnThread_3,5,main] (DATABASE = simsEbd), (DRDAID = {2}), Database 'simsEbd' shutdown.
+----------------------------------------------------------------
+Sat Jun 08 00:40:37 NZST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 6ede40af-018f-f2b7-0baf-00006ef8e96d 
+on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
+Loaded from file:/C:/Users/user/OneDrive/Documents/GitHub/StudentManageGUI/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.21+9-LTS-193
+user.dir=C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 08 00:41:25 NZST 2024: Shutting down Derby engine
+----------------------------------------------------------------
+Sat Jun 08 00:41:25 NZST 2024:
+Shutting down instance 6ede40af-018f-f2b7-0baf-00006ef8e96d on database directory C:\Users\user\OneDrive\Documents\GitHub\StudentManageGUI\SIMS GUI 1.0.1\SIMS 4.14\simsEbd\simsEbd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09 
 ----------------------------------------------------------------
