@@ -111,7 +111,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Paper&apos;s worth in points? 15? 30? 60?"/>
+        <Property name="text" type="java.lang.String" value="Paper&apos;s worth in points?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

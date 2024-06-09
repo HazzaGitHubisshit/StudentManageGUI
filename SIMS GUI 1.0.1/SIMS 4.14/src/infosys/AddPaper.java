@@ -68,7 +68,7 @@ public class AddPaper extends javax.swing.JPanel {
 
         jLabel3.setText("Paper Level?");
 
-        jLabel4.setText("Paper's worth in points? 15? 30? 60?");
+        jLabel4.setText("Paper's worth in points?");
 
         jLabel5.setText("Description Of Paper:");
 
