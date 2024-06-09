@@ -9,10 +9,7 @@ import Model.UpdateStudent;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author user
- */
+
 public class AddPaper extends javax.swing.JPanel {
 
     /**

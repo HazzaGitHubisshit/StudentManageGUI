@@ -13,10 +13,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author user
- */
+
 public class AddStudent extends javax.swing.JPanel {
 
     /**

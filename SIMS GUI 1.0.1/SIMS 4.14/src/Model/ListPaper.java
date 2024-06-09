@@ -9,10 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author user
- */
+
 public class ListPaper {
     private JDBCSetup database;
     //class for listing students based on arraylist, and select statement, the list will be displayed in gui

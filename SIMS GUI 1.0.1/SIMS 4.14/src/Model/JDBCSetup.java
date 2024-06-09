@@ -91,15 +91,4 @@ public final class JDBCSetup {
 }
 
 
-//        try {
-//        establishConnection();// Initialize database connection
-//            conn = DriverManager.getConnection("jdbc:derby:simsEbd;create=true");
-//            System.out.println("Get Connected Successfully ....");
-        // Set the schema to APP
-//            try (Statement statement = conn.createStatement()) {
-//                statement.executeUpdate("SET SCHEMA APP");
-//                System.out.println("Schema set to APP.");
-//            }
-//        } catch (SQLException ex) {
-//            System.out.println(ex.getMessage());
-//        }
+

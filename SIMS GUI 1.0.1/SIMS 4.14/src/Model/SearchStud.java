@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
-//not using anymore//SELECT * FROM Customers
-//WHERE CustomerName LIKE 'a%';
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-/**
- *
- * @author user
- */
+
 public class SearchStud {
 
     private JDBCSetup database;
@@ -28,7 +24,7 @@ public class SearchStud {
         database = new JDBCSetup();
     }
 
-    //or use list classes code to make combo box that you can select a name and it will display the full info
+    //use list classes code to make combo box that you can select a name and it will display the full info
     public String getStudentDetails(String studentID) {
         String sql = "SELECT STUDENT, FIRSTNAME, LASTNAME FROM STUDENT WHERE STUDENT = '" + studentID + "'";
         Connection connection = null;

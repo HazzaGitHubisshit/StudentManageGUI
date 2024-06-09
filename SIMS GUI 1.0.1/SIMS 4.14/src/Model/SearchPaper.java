@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-/**
- *
- * @author user
- */
+
 public class SearchPaper {
 
     private JDBCSetup database;
@@ -76,7 +73,6 @@ public class SearchPaper {
     }
 }
 
-//SELECT * FROM Customers
-//WHERE CustomerName LIKE 'a%';
-//or use list classes code to make combo box that you can select a name and it will display the full info
+
+//use list classes code to make combo box that you can select a name and it will display the full info
 

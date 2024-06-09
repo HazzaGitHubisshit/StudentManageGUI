@@ -4,10 +4,7 @@
  */
 package infosys;
 //not using
-/**
- *
- * @author user
- */
+
 public class DisassignPaper extends javax.swing.JPanel {
     
     /**

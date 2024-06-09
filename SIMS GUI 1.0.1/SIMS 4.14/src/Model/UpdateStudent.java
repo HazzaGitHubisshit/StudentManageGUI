@@ -10,10 +10,7 @@ import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author user
- */
+
 public class UpdateStudent {
     //add/delete students
 
@@ -25,19 +22,12 @@ public class UpdateStudent {
 
         String SQLAddToStudentStatement = "INSERT INTO STUDENT (STUDENT, FIRSTNAME, LASTNAME, DOB, PAPERCODE) VALUES ('" + ID + "', '" + FirstName + "', '" + LastName + "', '2004-01-01'," + " NULL)";
 //        //Uses sql statement with JDBCSetup class
-//        try (Connection conn = setup.getConnection();  
-//            PreparedStatement pstmt = conn.prepareStatement(SQLAddToStudentStatement)) {
-//
-//            pstmt.setString(1, ID);
-//            pstmt.setString(2, FirstName);
-//            pstmt.setString(3, LastName);
-//            pstmt.setDate(4, new java.sql.Date(DOB.getTime()));
-//
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            // Handle or rethrow the exception as appropriate
-//        }
+//        
+
+
+
+
+
 
         setup.updateDB(SQLAddToStudentStatement);
     }

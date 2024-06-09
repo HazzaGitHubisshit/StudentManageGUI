@@ -8,10 +8,7 @@ import javax.swing.JOptionPane;
 
 import Model.*;
 
-/**
- *
- * @author user
- */
+
 public class SearchPaper extends javax.swing.JPanel {
     ListPaper lp = new ListPaper();
     /**

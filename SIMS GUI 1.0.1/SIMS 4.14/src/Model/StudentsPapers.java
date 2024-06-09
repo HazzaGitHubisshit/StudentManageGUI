@@ -7,10 +7,7 @@ package Model;
 import java.sql.Connection;
 import java.sql.Statement;
 
-/**
- *
- * @author user
- */
+
 public class StudentsPapers {
     
 //    //Assigning and disassigning

@@ -4,10 +4,7 @@
  */
 package Main;
 
-/**
- *
- * @author user
- */
+
 
 import Model.JDBCSetup;
 import infosys.StudentManagementGUI;

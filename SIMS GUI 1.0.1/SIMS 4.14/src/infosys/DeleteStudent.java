@@ -7,10 +7,7 @@ package infosys;
 
 import Model.UpdateStudent;
 import Model.ListStud;
-/**
- *
- * @author user
- */
+
 public class DeleteStudent extends javax.swing.JPanel {
     ListStud ls = new ListStud();
     /**

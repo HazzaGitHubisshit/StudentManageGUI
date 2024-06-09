@@ -9,10 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author user
- */
+
 public class StudentManagementGUI extends javax.swing.JFrame {
 
     // i need to make a way for when button clicked moves to new window with new things, search queries, file I/O, yea

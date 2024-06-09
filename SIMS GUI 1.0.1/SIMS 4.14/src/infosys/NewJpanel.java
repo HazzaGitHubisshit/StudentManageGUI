@@ -4,10 +4,7 @@
  */
 package infosys;
 
-/**
- *
- * @author user
- */
+
 public class NewJpanel extends javax.swing.JPanel {
 
     /**

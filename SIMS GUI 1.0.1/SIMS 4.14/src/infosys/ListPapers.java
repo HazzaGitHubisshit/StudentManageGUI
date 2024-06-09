@@ -4,10 +4,7 @@
  */
 package infosys;
 
-/**
- *
- * @author user
- */
+
 import Model.*;
 import java.util.List;
 import javax.swing.JList;

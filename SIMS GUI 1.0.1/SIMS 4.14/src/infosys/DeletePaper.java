@@ -7,10 +7,7 @@ package infosys;
 import Model.ListPaper;
 import Model.UpdatePaper;
 
-/**
- *
- * @author user
- */
+
 public class DeletePaper extends javax.swing.JPanel {
     ListPaper lp = new ListPaper();
     /**

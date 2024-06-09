@@ -8,10 +8,6 @@ import Model.SearchStud;
 import javax.swing.JOptionPane;
 import Model.ListStud;
 
-/**
- *
- * @author user
- */
 public class SearchStudent extends javax.swing.JPanel {
     ListStud ls = new ListStud();
     /**
