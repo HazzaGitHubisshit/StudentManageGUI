@@ -49,7 +49,7 @@ public class SearchPaper {
                     int level = Integer.parseInt(levelStr);
                     int points = Integer.parseInt(pointsStr);
                     
-                    return papercode + title + level + points + description;
+                    return "PaperCode: " + papercode + "\nTitle: " + title + "\nLevel: " + level + "\nPoints worth: " + points + "\nDescription: " + description + "\nThis is a cool paper!";
                 }
             } else {
                 System.out.println("Failed to make connection to database.");

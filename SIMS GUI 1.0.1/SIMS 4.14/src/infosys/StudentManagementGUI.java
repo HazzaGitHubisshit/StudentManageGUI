@@ -4,12 +4,10 @@
  */
 package infosys;
 
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -109,7 +107,7 @@ public class StudentManagementGUI extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(203, 203, 203)
+                .addGap(219, 219, 219)
                 .addComponent(jLabel2)
                 .addGap(42, 42, 42)
                 .addComponent(jButton1)
@@ -233,7 +231,7 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         if (option == JOptionPane.YES_OPTION) {
 //            JDBCSetup JBDCSetup = new JDBCSetup();
 //            JBDCSetup.closeConnections();
-            dispose();           
+            dispose();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -246,11 +244,13 @@ public class StudentManagementGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
 //        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -278,9 +278,9 @@ public class StudentManagementGUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                
+
                 new StudentManagementGUI().setVisible(true);
-                
+
             }
         });
     }

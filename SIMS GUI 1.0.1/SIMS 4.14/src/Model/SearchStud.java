@@ -30,7 +30,7 @@ public class SearchStud {
 
     //or use list classes code to make combo box that you can select a name and it will display the full info
     public String getStudentDetails(String studentID) {
-        String sql = "SELECT * FROM STUDENT WHERE STUDENT = '" + studentID + "'";
+        String sql = "SELECT STUDENT, FIRSTNAME, LASTNAME FROM STUDENT WHERE STUDENT = '" + studentID + "'";
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -45,10 +45,10 @@ public class SearchStud {
                     String id = resultSet.getString("STUDENT");
                     String firstName = resultSet.getString("FIRSTNAME");
                     String lastName = resultSet.getString("LASTNAME");
-                    Date dob = resultSet.getDate("DOB");
-                    String paperCode = resultSet.getString("PAPERCODE");
-
-                    return id + firstName + lastName + dob + paperCode;
+//                    Date dob = resultSet.getDate("DOB");
+//                    String paperCode = resultSet.getString("PAPERCODE");
+// I messed up with the date and decided against assigning and disassigning, so the app wont display their date or what paper theyre in anymore:)
+                    return "Student's ID: " + id + "\nStudent's First Name: " + firstName + "\nStudent's Last Name: " + lastName + "\nThey are a cool student!";
                 }
             } else {
                 System.out.println("Failed to make connection to database.");

@@ -29,18 +29,18 @@ public class UpdatePaper {
         String SQLAddToPaperStatement = "INSERT INTO PAPER (PAPERCODE, PAPERTITLE, PAPERLEVEL, PAPERPOINTS, DESCRIPTION) VALUES ('"+Code+"', '"+title+"', "+level+", "+points+", '"+description+"')";
        //Uses sql statement with JDBCSetup class
         
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(SQLAddToPaperStatement);
-            pstmt.setString(1, Code);
-            pstmt.setString(2, title);
-            pstmt.setInt(3, level);
-            pstmt.setInt(4, points);
-            pstmt.setString(5, description);
-
-            pstmt.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(UpdatePaper.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            PreparedStatement pstmt = conn.prepareStatement(SQLAddToPaperStatement);
+//            pstmt.setString(1, Code);
+//            pstmt.setString(2, title);
+//            pstmt.setInt(3, level);
+//            pstmt.setInt(4, points);
+//            pstmt.setString(5, description);
+//
+//            pstmt.executeUpdate();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UpdatePaper.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
 
             

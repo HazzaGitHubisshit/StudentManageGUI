@@ -144,7 +144,7 @@ public class AddStudent extends javax.swing.JPanel {
 //            java.sql.Date dob = java.sql.Date.valueOf(dobLocalDate);
 
             UpdateStudent updateStudent = new UpdateStudent();
-            updateStudent.AddStudent(id, firstName, lastName, null);
+            updateStudent.AddStudent(id, firstName, lastName);
             System.out.println("Added to database");
             jTextField1.setText("");
             jTextField2.setText("");
