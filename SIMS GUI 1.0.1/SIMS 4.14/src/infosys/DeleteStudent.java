@@ -4,12 +4,15 @@
  */
 package infosys;
 
+
+import Model.UpdateStudent;
+import Model.ListStud;
 /**
  *
  * @author user
  */
 public class DeleteStudent extends javax.swing.JPanel {
-
+    ListStud ls = new ListStud();
     /**
      * Creates new form DeleteStudent
      */
@@ -30,7 +33,7 @@ public class DeleteStudent extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ls.ListSearchStudent().toArray(new String[0])));
 
         jButton1.setText("(Delete)");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +74,16 @@ public class DeleteStudent extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String selectedID = (String) jComboBox1.getSelectedItem();
+        
         try {
+            
+            
+            UpdateStudent US = new UpdateStudent();
+            US.DeleteStudent(selectedID);
             System.out.println("Removed from database");
-        } catch (Exception e){
+            
+        } catch (Exception e) {
             System.err.println("Failed");
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -4,12 +4,15 @@
  */
 package infosys;
 
+import Model.ListPaper;
+import Model.UpdatePaper;
+
 /**
  *
  * @author user
  */
 public class DeletePaper extends javax.swing.JPanel {
-
+    ListPaper lp = new ListPaper();
     /**
      * Creates new form DeletePaper
      */
@@ -30,7 +33,7 @@ public class DeletePaper extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(lp.ListSearchPaper().toArray(new String[0])));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -80,10 +83,16 @@ public class DeletePaper extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String selectedCode = (String) jComboBox1.getSelectedItem();
+        
         try {
+            
+            
+            UpdatePaper UP = new UpdatePaper();
+            UP.DeletePaper(selectedCode);
             System.out.println("Removed from database");
-        } catch (Exception e){
+            
+        } catch (Exception e) {
             System.err.println("Failed");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
