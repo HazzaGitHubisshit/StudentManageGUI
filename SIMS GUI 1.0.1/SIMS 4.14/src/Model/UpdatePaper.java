@@ -50,7 +50,7 @@ public class UpdatePaper {
     
     public void DeletePaper(String Code) {
         
-        String sql = "DELETE FROM PAPER WHERE PAPERCODE ='"+Code+"';";
+        String sql = "DELETE FROM PAPER WHERE PAPERCODE ='"+Code+"'";
         setup.updateDB(sql);
         //Uses sql statement with JDBCSetup class
     }

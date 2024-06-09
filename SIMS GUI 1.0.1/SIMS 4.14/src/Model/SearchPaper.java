@@ -28,7 +28,7 @@ public class SearchPaper {
 
     //or use list classes code to make combo box that you can select a name and it will display the full info
     public String getPaperDetails(String code) {
-        String sql = "SELECT * FROM PAPER WHERE PAPER = '" + code + "'";
+        String sql = "SELECT * FROM PAPER WHERE PAPERCODE = '" + code + "'";
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
