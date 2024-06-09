@@ -4,6 +4,11 @@
  */
 package infosys;
 
+import Model.UpdatePaper;
+import Model.UpdateStudent;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -145,12 +150,37 @@ public class AddPaper extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String code = jTextField1.getText();
+        String title = jTextField2.getText();
+        String levelStr = jTextField3.getText();
+        String pointsStr = jTextField4.getText();
+        String description = jTextField5.getText();
+
+        if (code.isEmpty() || title.isEmpty() || levelStr.isEmpty() || pointsStr.isEmpty() || description.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fully input all values.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Exit method if any field is empty
+        }
         try {
+            int level = Integer.parseInt(levelStr);
+            int points = Integer.parseInt(pointsStr);
+
+            UpdatePaper updatepaper = new UpdatePaper();
+            updatepaper.AddPaper(code, title, level, points, description);
             System.out.println("Added to database");
-        } catch (Exception e){
+
+            // Clear text fields
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid number format for level or points.", "Error", JOptionPane.ERROR_MESSAGE);
             System.err.println("Failed");
         }
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

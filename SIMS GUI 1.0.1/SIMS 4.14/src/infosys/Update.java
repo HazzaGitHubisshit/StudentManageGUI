@@ -51,6 +51,7 @@ public class Update extends JPanel  {
         DelPape = new infosys.DeletePaper();
         DelStud = new infosys.DeleteStudent();
         DisPape = new infosys.DisassignPaper();
+        jLabel6 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(204, 153, 255));
 
@@ -149,7 +150,9 @@ public class Update extends JPanel  {
                 .addComponent(homebutt)
                 .addGap(284, 284, 284))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addGap(69, 69, 69)
+                .addComponent(jLabel6)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -171,7 +174,7 @@ public class Update extends JPanel  {
                                     .addComponent(jLabel5))
                                 .addGap(196, 196, 196)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(127, Short.MAX_VALUE))))
+                        .addContainerGap(164, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +195,9 @@ public class Update extends JPanel  {
                         .addComponent(AddPapeButt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DelPapeButt)
-                        .addGap(60, 60, 60)
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel6)
+                        .addGap(9, 9, 9)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AssignButt)
@@ -205,7 +210,7 @@ public class Update extends JPanel  {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(69, 69, 69)
                 .addComponent(homebutt)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -299,6 +304,7 @@ public class Update extends JPanel  {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private infosys.NewJpanel panel;

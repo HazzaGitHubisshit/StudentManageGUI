@@ -4,14 +4,16 @@
  */
 package infosys;
 
+import Model.SearchStud;
 import javax.swing.JOptionPane;
+import Model.ListStud;
 
 /**
  *
  * @author user
  */
 public class SearchStudent extends javax.swing.JPanel {
-
+    ListStud ls = new ListStud();
     /**
      * Creates new form SearchStudent
      */
@@ -52,7 +54,12 @@ public class SearchStudent extends javax.swing.JPanel {
             .addGap(0, 268, Short.MAX_VALUE)
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ls.ListSearchStudent().toArray(new String[0])));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Select:");
 
@@ -85,11 +92,19 @@ public class SearchStudent extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        SearchStud ss = new SearchStud();
+        String selectedID = (String)jComboBox1.getSelectedItem();
+        
+        String message = ss.getStudentDetails(selectedID);
         JOptionPane.showMessageDialog(jPanel1, 
                     "",
                     "Selected Students Information",
                     JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

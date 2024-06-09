@@ -4,6 +4,15 @@
  */
 package infosys;
 
+import Model.UpdateStudent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -55,7 +64,7 @@ public class AddStudent extends javax.swing.JPanel {
 
         jLabel3.setText("Student Last Name?");
 
-        jLabel4.setText("Student's Date Of Birth(dd/mm/yy");
+        jLabel4.setText("Student's Date Of Birth(yyyy-mm-dd)");
 
         jButton2.setText("(Add)");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -129,10 +138,40 @@ public class AddStudent extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String id = jTextField1.getText();
+        String firstName = jTextField2.getText();
+        String lastName = jTextField3.getText();
+        String dobText = jTextField4.getText();
+
+        if (id.isEmpty() || firstName.isEmpty() || lastName.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fully input all values.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Exit method if any field is empty
+        }
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try {
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            java.util.Date dobUtil = sdf.parse(dobText);
+//            java.sql.Date dob = new java.sql.Date(dobUtil.getTime()); // Converts util Date to sql Date
+            
+//Parse the input string to a LocalDate
+//            LocalDate dobLocalDate = LocalDate.parse(dobText, formatter);
+//              not using date anymore
+//            // Convert LocalDate to java.sql.Date
+//            java.sql.Date dob = java.sql.Date.valueOf(dobLocalDate);
+
+            UpdateStudent updateStudent = new UpdateStudent();
+            updateStudent.AddStudent(id, firstName, lastName, null);
             System.out.println("Added to database");
-        } catch (Exception e){
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(this, "Invalid date format. Please use yyyy-MM-dd.", "Error", JOptionPane.ERROR_MESSAGE);
+//            System.err.println("Failed to parse date: " + dobText);
+            e.printStackTrace();
             System.err.println("Failed");
+
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

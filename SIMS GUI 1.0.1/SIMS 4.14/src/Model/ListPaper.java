@@ -64,6 +64,51 @@ public class ListPaper {
 
         return names;
     }
+    
+    public List<String> ListSearchPaper(){
+        //For the search panel to list codes so you can select and then see all info.
+        List<String> names = new ArrayList<>();
+        String sql = "SELECT PAPERCODE FROM PAPER";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = database.getConnection(); // Ensure this returns a valid connection
+            if (connection != null) {
+                statement = connection.createStatement();
+                resultSet = statement.executeQuery(sql);
+
+                while (resultSet.next()) {
+                    String paperCode = resultSet.getString("PAPERCODE");
+                    
+                    names.add(paperCode);
+                }
+            } else {
+                System.out.println("Failed to make connection to database.");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        return names;
+        
+    }
 
 }
 

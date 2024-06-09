@@ -14,24 +14,12 @@ public final class JDBCSetup {
 
     private static final String USER_NAME = "sims"; //your DB username
     private static final String PASSWORD = "sims"; //your DB password
-    private static final String URL = "jdbc:derby:simsEbd;create=true";  //url of the DB host
+    private static final String URL = "jdbc:derby:SIMS; create=true";  //url of the DB host
     //class to set up the database
     Connection conn;
 
     public JDBCSetup() {
-
-//        try {
-        establishConnection();// Initialize database connection
-//            conn = DriverManager.getConnection("jdbc:derby:simsEbd;create=true");
-//            System.out.println("Get Connected Successfully ....");
-        // Set the schema to APP
-//            try (Statement statement = conn.createStatement()) {
-//                statement.executeUpdate("SET SCHEMA APP");
-//                System.out.println("Schema set to APP.");
-//            }
-//        } catch (SQLException ex) {
-//            System.out.println(ex.getMessage());
-//        }
+        establishConnection();
     }
 
     public static void main(String[] args) {
@@ -43,15 +31,15 @@ public final class JDBCSetup {
         return this.conn;
     }
 
-    //Establish connection
-    public void establishConnection() {
         
-//Establish a connection to Database
+    public void establishConnection() {
+
+        //Establish a connection to Database
         if (this.conn == null) {
             try {
                 conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
                 System.out.println(URL + " Get Connected Successfully ....");
-                
+
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
             }
@@ -101,3 +89,17 @@ public final class JDBCSetup {
     }
 
 }
+
+
+//        try {
+//        establishConnection();// Initialize database connection
+//            conn = DriverManager.getConnection("jdbc:derby:simsEbd;create=true");
+//            System.out.println("Get Connected Successfully ....");
+        // Set the schema to APP
+//            try (Statement statement = conn.createStatement()) {
+//                statement.executeUpdate("SET SCHEMA APP");
+//                System.out.println("Schema set to APP.");
+//            }
+//        } catch (SQLException ex) {
+//            System.out.println(ex.getMessage());
+//        }

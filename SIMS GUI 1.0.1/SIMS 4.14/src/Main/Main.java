@@ -11,16 +11,20 @@ package Main;
 
 import Model.JDBCSetup;
 import infosys.StudentManagementGUI;
+import Model.SQLFoundation;
 
 public class Main {
     public static void main(String[] args) {
-        JDBCSetup JBDCSetup = new JDBCSetup();
-        JBDCSetup.establishConnection();
+        JDBCSetup jdbcSetup = new JDBCSetup();
+        jdbcSetup.establishConnection();
 
-        
-        StudentManagementGUI StudentManagementGUI = new StudentManagementGUI();
-        StudentManagementGUI.setVisible(true);
-//        JBDCSetup.closeConnections();
+//        Initialize the database and create tables
+        SQLFoundation dbInitializer = new SQLFoundation(jdbcSetup);
+        dbInitializer.createTables();
+
+        // Launch the GUI
+        StudentManagementGUI studentManagementGUI = new StudentManagementGUI();
+        studentManagementGUI.setVisible(true);
     }
     
     

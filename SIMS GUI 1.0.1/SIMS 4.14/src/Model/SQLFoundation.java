@@ -17,41 +17,57 @@ import java.sql.Statement;
 public class SQLFoundation {
 
     //this will be for tables
-    private JDBCSetup setup;
-    private Connection conn;
+    private JDBCSetup dbSetup;
 
-    public SQLFoundation() {
-        setup = new JDBCSetup();
-        conn = setup.getConnection();
+    public SQLFoundation(JDBCSetup dbSetup) {
+        this.dbSetup = dbSetup;
     }
 
-    public void runDatabaseSetup(Connection connection) throws SQLException {
-        SQLFoundation sql = new SQLFoundation();
-        try ( Statement statement = connection.createStatement()) {
+    public void createTables() {
+        Connection conn = dbSetup.getConnection();
+        Statement stmt = null;
 
-            if (sql.tableExists("PAPER")) {
-                statement.executeUpdate("DROP TABLE PAPER");
-
+        try {
+            stmt = conn.createStatement();
+            DatabaseMetaData dbMetaData = conn.getMetaData();
+            ResultSet rs = dbMetaData.getSchemas(null, "SIMS");
+            if (!rs.next()) {
+                // Schema does not exist, create it
+                stmt.executeUpdate("CREATE SCHEMA SIMS");
+                System.out.println("Schema SIMS created successfully.");
             }
-            String PaperTable = "CREATE TABLE PAPER (PAPERCODE VARCHAR(7) PRIMARY KEY, PAPERTITLE VARCHAR(255), PAPERLEVEL INT, PAPERPOINTS INT, DESCRIPTION VARCHAR(255))";
-            statement.executeUpdate(PaperTable);
 
-            if (sql.tableExists("STUDENT")) {
-                statement.executeUpdate("DROP TABLE STUDENT");
+            // Set the schema to SIMS
+            stmt.executeUpdate("SET SCHEMA SIMS");
 
+            // Check if the Papers table exists
+            rs = dbMetaData.getTables(null, "SIMS", "PAPER", null);
+            if (!rs.next()) {
+                // Courses table does not exist, create it
+                String createPapersTable = "CREATE TABLE PAPER (PAPERCODE VARCHAR(7) PRIMARY KEY, PAPERTITLE VARCHAR(255), PAPERLEVEL INT, PAPERPOINTS INT, DESCRIPTION VARCHAR(255))";
+                stmt.executeUpdate(createPapersTable);
+                System.out.println("Paper table created successfully.");
             }
-            String StudentTable = "CREATE TABLE STUDENT (STUDENT CHAR(8) PRIMARY KEY, FIRSTNAME VARCHAR(50) NOT NULL, LASTNAME VARCHAR(50) NOT NULL, DOB DATE NOT NULL, PAPERCODE VARCHAR(10), FOREIGN KEY (PAPERCODE) REFERENCES PAPER(PAPERCODE));";
-            statement.executeUpdate(StudentTable);
+
+            // Check if the Students table exists
+            rs = dbMetaData.getTables(null, "SIMS", "STUDENT", null);
+            if (!rs.next()) {
+                // Students table does not exist, create it
+                String createStudentsTable = "CREATE TABLE STUDENT (STUDENT CHAR(8) PRIMARY KEY, FIRSTNAME VARCHAR(50) NOT NULL, LASTNAME VARCHAR(50) NOT NULL, DOB DATE NOT NULL, PAPERCODE VARCHAR(7), FOREIGN KEY (PAPERCODE) REFERENCES PAPER(PAPERCODE))";
+                stmt.executeUpdate(createStudentsTable);
+                System.out.println("Student table created successfully.");
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }
-    }
-
-    private boolean tableExists(String tableName) throws SQLException {
-        DatabaseMetaData metaData = conn.getMetaData();
-        try ( ResultSet resultSet = metaData.getTables(null, null, tableName, null)) {
-            return resultSet.next();
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
         }
     }
 }
@@ -67,3 +83,22 @@ public class SQLFoundation {
 //            statement.execute(insertDataSQL);
 //
 //            System.out.println("Database setup completed.");
+//    private boolean tableExists(String tableName) throws SQLException {
+//        DatabaseMetaData metaData = conn.getMetaData();
+//        try ( ResultSet resultSet = metaData.getTables(null, null, tableName, null)) {
+//            return resultSet.next();
+//        }
+//    }
+//if (sql.tableExists("PAPER")) {
+//                statement.executeUpdate("DROP TABLE PAPER");
+//
+//            }
+//            String PaperTable = "CREATE TABLE PAPER (PAPERCODE VARCHAR(7) PRIMARY KEY, PAPERTITLE VARCHAR(255), PAPERLEVEL INT, PAPERPOINTS INT, DESCRIPTION VARCHAR(255))";
+//            statement.executeUpdate(PaperTable);
+//
+//            if (sql.tableExists("STUDENT")) {
+//                statement.executeUpdate("DROP TABLE STUDENT");
+//
+//            }
+//            String StudentTable = "CREATE TABLE STUDENT (STUDENT CHAR(8) PRIMARY KEY, FIRSTNAME VARCHAR(50) NOT NULL, LASTNAME VARCHAR(50) NOT NULL, DOB DATE NOT NULL, PAPERCODE VARCHAR(10), FOREIGN KEY (PAPERCODE) REFERENCES PAPER(PAPERCODE));";
+//            statement.executeUpdate(StudentTable);

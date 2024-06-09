@@ -38,17 +38,15 @@ public class ListStudents extends javax.swing.JPanel {
         jList1 = new javax.swing.JList<>();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            //    ListStud databaseHelper = new ListStud();
-            //    List<String> names = databaseHelper.listnames();
-            //
-            //    // Convert the list to an array for JList
-            //    String[] nameArray = names.toArray(new String[0]);
-            //
-            //    // Create a JList and populate it with the names
-            //    //        JList<String> nameList = new JList<>(nameArray);
-            String[] strings = {"1","2","3","4","5"};
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            ListStud databaseHelper = new ListStud();
+            List<String> names = databaseHelper.listnames();
+
+            String[] nameArray = names.toArray(new String[0]);
+
+            //    JList<String> nameList = new JList<>(nameArray);
+            //      String[] strings = {"1","2","3","4","5"};
+            public int getSize() { return nameArray.length; }
+            public String getElementAt(int i) { return nameArray[i]; }
         }
     );
     jList1.addAncestorListener(new javax.swing.event.AncestorListener() {

@@ -5,8 +5,12 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,8 +26,24 @@ public class UpdatePaper {
     
     public void AddPaper(String Code, String title, int level, int points, String description) {
         
-        String SQLAddToPaperStatement = "INSERT INTO PAPER (PAPERCODE, PAPERTITLE, PAPERLEVEL, PAPERPOINTS, DESCRIPTION) VALUES ('"+Code+"', '"+title+"', "+level+", "+points+", '"+description+"');";
-        //Uses sql statement with JDBCSetup class
+        String SQLAddToPaperStatement = "INSERT INTO PAPER (PAPERCODE, PAPERTITLE, PAPERLEVEL, PAPERPOINTS, DESCRIPTION) VALUES ('"+Code+"', '"+title+"', "+level+", "+points+", '"+description+"')";
+       //Uses sql statement with JDBCSetup class
+        
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQLAddToPaperStatement);
+            pstmt.setString(1, Code);
+            pstmt.setString(2, title);
+            pstmt.setInt(3, level);
+            pstmt.setInt(4, points);
+            pstmt.setString(5, description);
+
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UpdatePaper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+            
         setup.updateDB(SQLAddToPaperStatement);
     }
     

@@ -26,7 +26,7 @@ public class ListStud {
 
     public List<String> listnames() {
         List<String> names = new ArrayList<>();
-        String sql = "SELECT FIRSTNAME, LASTNAME FROM STUDENT"; 
+        String sql = "SELECT STUDENT, FIRSTNAME, LASTNAME FROM STUDENT"; 
 
         Connection connection = null;
         Statement statement = null;
@@ -39,9 +39,10 @@ public class ListStud {
                 resultSet = statement.executeQuery(sql);
 
                 while (resultSet.next()) {
+                    String ID = resultSet.getString("STUDENT");
                     String firstName = resultSet.getString("FIRSTNAME");
                     String lastName = resultSet.getString("LASTNAME");
-                    names.add(firstName + " " + lastName);
+                    names.add(ID + ", " + firstName + " " + lastName);
                 }
             } else {
                 System.out.println("Failed to make connection to database.");
@@ -67,7 +68,51 @@ public class ListStud {
         return names;
 
     }
-//    
+    
+    public List<String> ListSearchStudent(){
+        //For the search panel to list ID's so you can select and then see all info.
+        List<String> names = new ArrayList<>();
+        String sql = "SELECT STUDENT FROM STUDENT"; 
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = database.getConnection(); // Ensure this returns a valid connection
+            if (connection != null) {
+                statement = connection.createStatement();
+                resultSet = statement.executeQuery(sql);
+
+                while (resultSet.next()) {
+                    String ID = resultSet.getString("STUDENT");
+                    names.add(ID);
+                }
+            } else {
+                System.out.println("Failed to make connection to database.");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        return names;
+        
+    }
+  
 }
 
 //public List<String> listnames() {
